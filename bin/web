@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const $ = require('cheerio');
 
 const http = require('http');
 const express = require('express');
@@ -9,7 +8,6 @@ const TelegramBot = require('node-telegram-bot-api');
 const firebase  = require('../firebase/util');
 const crawler  = require('../crawler/sonseans');
 const properties  = require('../package.json');
-const rp = require('request-promise');
 
 const bot = new TelegramBot(properties.token);
 bot.setWebHook("https://sonseans.herokuapp.com/" + properties.token);
@@ -47,7 +45,7 @@ bot.onText(/^\/trt2/, function (message) {
 
     crawler.fetch().then(function (yayinAkisi)
     {
-        var txt = "* TRT2'de bugün: " + yayinAkisi;
+        var txt = "* TRT2'de bugün: " + yayinAkisi.toString();
 
         bot.sendMessage(chatId,
             txt, {
