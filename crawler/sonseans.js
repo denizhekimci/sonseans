@@ -18,14 +18,14 @@ function fetch(){
         }
 
         $chunk('p.tur97 > a > span.aks0').each(function (i, elem) {
-            var movieTimes = elem.attribs.href;
+            var movieTimes = elem.children[0].data;
             console.log(movieTimes);
             movieTimes = (!isNaN(movieTimes)) ? movieTimes.replace(/\n/g, "").replace(/\t/g, "") : null;
             yayinAkisi.movieTimes = movieTimes;
         });
 
         $chunk('p.tur97 > a > span.aks1').each(function (i, elem) {
-            var movieTitles = elem.attribs.href;
+            var movieTitles = elem.children[0].data;
             movieTitles = (!isNaN(movieTitles)) ? movieTitles.replace(/\n/g, "").replace(/\t/g, "") : null;
             yayinAkisi.movieTitles = movieTitles;
         });

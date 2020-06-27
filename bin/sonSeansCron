@@ -12,7 +12,7 @@ function execute(){
 
     crawler.fetch().then(function(yayinAkisi){
 
-         var txt = "*" + yayinAkisi.movieTimes + ""*" + yayinAkisi.movieTitles ";
+         var txt = "*" + yayinAkisi.movieTimes + "*" + yayinAkisi.movieTitles ";
 
         firebase
             .getChatsRF()
