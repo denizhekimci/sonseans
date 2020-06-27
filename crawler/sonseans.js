@@ -13,7 +13,7 @@ function fetch(){
 
         var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
 
-        var yayinAkisi = [];
+        String: yayinAkisi = null;
         /*
 
         $chunk('p.tur97 > a > span.aks0').each(function (i, elem) {
@@ -55,8 +55,6 @@ function fetch(){
             yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
         }
 
-
-        console.log('Yayın Akışı' + yayinAkisi.toString());
         return yayinAkisi;
     }).catch(function(err){
         //handle error
