@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+const $ = require('cheerio');
+
+const http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
+const TelegramBot = require('node-telegram-bot-api');
+
+const firebase  = require('../firebase/util');
+const crawler  = require('../crawler/sonseans');
+const properties  = require('../package.json');
+const rp = require('request-promise');
+
+const bot = new TelegramBot(properties.token);
+bot.setWebHook("https://medium-packtpub-bot.herokuapp.com/" + properties.token);
+
+var app = express();
+app.use(bodyParser.json());
+
+var port = process.env.PORT || '3000';
+app.set('port', port);
+
+var server = http.createServer(app);
+server.listen(port).on('error', function onError(error) {
+    console.log(error);
+})
+    .on('listening', function onListening() {
+        var addr = server.address();
+        var bind = typeof addr === 'string'
+            ? 'pipe' + addr
+            : 'port' + addr.port;
+        console.log('Listening on ' + bind);
+    });
+
+// webhook address listener
+app.post('/' + bot.token, function(req, res) {
+    bot.processUpdate(req.body);
+    res.sendStatus(200);
+});
+
+
+// trt2 yazılınca
+bot.onText(/^\/trt2/, function (message) {
+    const chatId = message.chat.id;
+
+    firebase.saveChat(chatId, message.chat);
+
+    crawler.fetch().then(function (yayinAkisi)
+    {
+        var txt = yayinAkisi
+
+        bot.sendMessage(chatId,
+            txt, {
+                "parse_mode" : 'Markdown'
+            }).then(function () {console.log('bot replied ...'); });
+
+    });
+});
+
+

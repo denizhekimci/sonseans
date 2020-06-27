@@ -3,13 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/web"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "~1.16.0",
+    "cheerio": "^0.22.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "firebase": "^3.8.0",
+    "firebase-admin": "^8.12.1",
+    "got": "^6.3.0",
+    "node-telegram-bot-api": "^0.21.1"
+  },
+  "token": "1236616273:AAHVe18oSPtsyS6UWWLnssPrNkRDF_-aBZI"
 }
