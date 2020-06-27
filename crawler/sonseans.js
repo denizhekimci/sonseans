@@ -46,10 +46,10 @@ function fetch(){
         }
 
         yayinAkisi = yayinAkisi.toString()
-            .replace("_", "\\_")
-            .replace("*", "\\*")
-            .replace("[", "\\[")
-            .replace("`", "\\`");
+            .replace(/_/g, "\\_")
+            .replace(/\*/g, "\\*")
+            .replace(/\[/g, "\\[")
+            .replace(/`/g, "\\`");
         return yayinAkisi;
     });
 }
