@@ -13,9 +13,10 @@ function fetch(){
 
         var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
 
-        /*var yayinAkisi = {
+        var yayinAkisi = {
             claim: URL
         }
+        /*
 
         $chunk('p.tur97 > a > span.aks0').each(function (i, elem) {
             var movieTimes = elem.children[0].data;
@@ -40,11 +41,15 @@ function fetch(){
             return $(this).text();
         }).toArray();
 
-        let yayinAkisi = [];
         for(i = 0; i < movieTitles.length; i++){
             yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
         }
 
+        yayinAkisi = yayinAkisi
+            .replace("_", "\\_")
+            .replace("*", "\\*")
+            .replace("[", "\\[")
+            .replace("`", "\\`");
         return yayinAkisi;
     });
 }
