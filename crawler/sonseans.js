@@ -31,6 +31,7 @@ function fetch(){
 
         let movieTimes = [];
         movieTimes = $('#gunlukAkisDIV > p.tur97 > a > span.aks0 ', data).map(function() {
+            console.log(txt);
             var txt = $(this).text().replace("_", "\\_")
                 .replace("*", "\\*")
                 .replace("[", "\\[")
@@ -41,6 +42,7 @@ function fetch(){
 
         let movieTitles = [];
         movieTitles = $('#gunlukAkisDIV > p.tur97 > a > span.aks1 ', data).map(function() {
+            console.log(txt);
             var txt = $(this).text().replace("_", "\\_")
                 .replace("*", "\\*")
                 .replace("[", "\\[")
