@@ -45,7 +45,7 @@ function fetch(){
             yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
         }
 
-        yayinAkisi = yayinAkisi
+        yayinAkisi = yayinAkisi.toString()
             .replace("_", "\\_")
             .replace("*", "\\*")
             .replace("[", "\\[")
