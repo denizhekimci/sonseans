@@ -19,12 +19,14 @@ function fetch(){
         }
 
         $chunk('p.tur97 > a > span.aks0').each(function (i, elem) {
-            var movieTimes = elem.attribs.p;
+            var movieTimes = elem.attribs.href;
+            movieTimes = movieTimes.replace(/\n/g, "").replace(/\t/g, "");
             yayinAkisi.movieTimes = movieTimes;
         });
 
         $chunk('p.tur97 > a > span.aks1').each(function (i, elem) {
-            var movieTitles = elem.attribs.p;
+            var movieTitles = elem.attribs.href;
+            movieTitles = movieTitles.replace(/\n/g, "").replace(/\t/g, "");
             yayinAkisi.movieTitles = movieTitles;
         });
 
