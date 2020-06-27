@@ -13,7 +13,7 @@ function fetch(){
 
         var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
 
-        var yayinAkisi = {
+        /*var yayinAkisi = {
             claim: URL
         }
 
@@ -28,7 +28,22 @@ function fetch(){
             var movieTitles = elem.children[0].data;
             movieTitles = (!isNaN(movieTitles)) ? movieTitles.replace(/\n/g, "").replace(/\t/g, "") : null;
             yayinAkisi.movieTitles = movieTitles;
-        });
+        });*/
+
+        let movieTimes = [];
+        movieTimes = $('#gunlukAkisDIV > p.tur97 > a > span.aks0 ', data).map(function() {
+            return $(this).text();
+        }).toArray();
+
+        let movieTitles = [];
+        movieTitles = $('#gunlukAkisDIV > p.tur97 > a > span.aks1 ', data).map(function() {
+            return $(this).text();
+        }).toArray();
+
+        let yayinAkisi = [];
+        for(i = 0; i < movieTitles.length; i++){
+            yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
+        }
 
         return yayinAkisi;
     });

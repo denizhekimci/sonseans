@@ -4,6 +4,7 @@
     <list default="true" id="a54215c1-78f0-4d39-b5b1-b54e015446e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/bin/sonSeansCron" beforeDir="false" afterPath="$PROJECT_DIR$/bin/sonSeansCron" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/web" beforeDir="false" afterPath="$PROJECT_DIR$/bin/web" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/sonseans.js" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/sonseans.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/bin/sonSeansCron">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="78" lean-forward="true" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
+              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -28,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/sonseans.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+            <state relative-caret-position="398">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -37,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/web">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="49" column="77" lean-forward="true" selection-start-line="49" selection-start-column="77" selection-end-line="49" selection-end-column="77" />
+            <state relative-caret-position="370">
+              <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -67,8 +68,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/firebase/util.js" />
         <option value="$PROJECT_DIR$/bin/packtpubCron" />
-        <option value="$PROJECT_DIR$/crawler/sonseans.js" />
         <option value="$PROJECT_DIR$/bin/sonSeansCron" />
+        <option value="$PROJECT_DIR$/crawler/sonseans.js" />
         <option value="$PROJECT_DIR$/bin/web" />
       </list>
     </option>
@@ -165,12 +166,12 @@
       <workItem from="1591860092713" duration="1735000" />
       <workItem from="1591862820513" duration="767000" />
       <workItem from="1591873117277" duration="2629000" />
-      <workItem from="1593235552048" duration="12157000" />
+      <workItem from="1593235552048" duration="12382000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17288000" />
+    <option name="totallyTimeSpent" value="17513000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -302,22 +303,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/sonseans.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+        <state relative-caret-position="398">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/sonSeansCron">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="78" lean-forward="true" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/web">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="49" column="77" lean-forward="true" selection-start-line="49" selection-start-column="77" selection-end-line="49" selection-end-column="77" />
+        <state relative-caret-position="370">
+          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
         </state>
       </provider>
     </entry>
