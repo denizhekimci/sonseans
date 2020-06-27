@@ -31,12 +31,22 @@ function fetch(){
 
         let movieTimes = [];
         movieTimes = $('#gunlukAkisDIV > p.tur97 > a > span.aks0 ', data).map(function() {
-            return $(this).text();
+            var txt = $(this).text().replace("_", "\\_")
+                .replace("*", "\\*")
+                .replace("[", "\\[")
+                .replace("`", "\\`")
+                .replace(":", "\\:");
+            return txt;
         }).toArray();
 
         let movieTitles = [];
         movieTitles = $('#gunlukAkisDIV > p.tur97 > a > span.aks1 ', data).map(function() {
-            return $(this).text();
+            var txt = $(this).text().replace("_", "\\_")
+                .replace("*", "\\*")
+                .replace("[", "\\[")
+                .replace("`", "\\`")
+                .replace(":", "\\:")
+            return txt;
         }).toArray();
 
         for(i = 0; i < movieTitles.length; i++){
