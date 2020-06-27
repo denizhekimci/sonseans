@@ -1,6 +1,6 @@
 const got       = require('got');
 const cheerio   = require('cheerio');
-
+const rp = require('request-promise');
 const PROTOCOL = "https:";
 const HOST = "https://www.trt.net.tr";
 
