@@ -20,13 +20,13 @@ function fetch(){
         $chunk('p.tur97 > a > span.aks0').each(function (i, elem) {
             var movieTimes = elem.attribs.href;
             console.log(movieTimes);
-            movieTimes = movieTimes.replace(/\n/g, "").replace(/\t/g, "");
+            movieTimes = (!isNaN(movieTimes)) ? movieTimes.replace(/\n/g, "").replace(/\t/g, "") : null;
             yayinAkisi.movieTimes = movieTimes;
         });
 
         $chunk('p.tur97 > a > span.aks1').each(function (i, elem) {
             var movieTitles = elem.attribs.href;
-            movieTitles = movieTitles.replace(/\n/g, "").replace(/\t/g, "");
+            movieTitles = (!isNaN(movieTitles)) ? movieTitles.replace(/\n/g, "").replace(/\t/g, "") : null;
             yayinAkisi.movieTitles = movieTitles;
         });
 
