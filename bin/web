@@ -12,7 +12,7 @@ const properties  = require('../package.json');
 const rp = require('request-promise');
 
 const bot = new TelegramBot(properties.token);
-bot.setWebHook("https://medium-packtpub-bot.herokuapp.com/" + properties.token);
+bot.setWebHook("https://sonseans.herokuapp.com/" + properties.token);
 
 var app = express();
 app.use(bodyParser.json());
