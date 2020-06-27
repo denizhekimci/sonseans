@@ -12,31 +12,23 @@ function fetch(){
 
         var $ = cheerio.load(data.body,{decodeEntities:false});
 
+        var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
+
         var yayinAkisi = {
             claim: URL
         }
-        let txt = rp(url)
-            .then(function (html) {
-                let movieTimes = $('#gunlukAkisDIV > p.tur97 > a > span.aks0 ', html).map(function () {
-                    return $(this).text();
-                }).toArray();
 
-                let movieTitles = [];
-                movieTitles = $('#gunlukAkisDIV > p.tur97 > a > span.aks1 ', html).map(function () {
-                    return $(this).text();
-                }).toArray();
+        $chunk('p.tur97 > a > span.aks0').each(function (i, elem) {
+            var movieTimes = elem.attribs.p;
+            movieTimes = movieTimes.replace(/\n/g, "").replace(/\t/g, "");
+            yayinAkisi.movieTimes = movieTimes;
+        });
 
-                for (let i = 0; i < movieTitles.length; i++) {
-                    yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
-                }
-                var resultText = 'TRT2\'de bugünkü filmler:\n' + yayinAkisi
-
-                return resultText;
-            }).catch(function (err) {
-                //handle error
-                return err;
-            });
-
+        $chunk('p.tur97 > a > span.aks1').each(function (i, elem) {
+            var movieTitles = elem.attribs.p;
+            movieTitles = movieTitles.replace(/\n/g, "").replace(/\t/g, "");
+            yayinAkisi.movieTitles = movieTitles;
+        });
 
         return yayinAkisi;
     });
