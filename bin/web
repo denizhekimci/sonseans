@@ -45,7 +45,7 @@ bot.onText(/^\/trt2/, function (message) {
 
     crawler.fetch().then(function (yayinAkisi)
     {
-        var txt = "* TRT2'de bugün: " + yayinAkisi.toString();
+        var txt = " TRT2'de bugün: " + yayinAkisi.toString();
 
         bot.sendMessage(chatId,
             txt, {

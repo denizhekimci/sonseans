@@ -45,19 +45,13 @@ function fetch(){
                 .replace("*", "\\*")
                 .replace("[", "\\[")
                 .replace("`", "\\`")
-                .replace(":", "\\:")
+                .replace(":", "\\:");
             return txt;
         }).toArray();
 
         for(i = 0; i < movieTitles.length; i++){
             yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
         }
-
-        yayinAkisi = yayinAkisi.toString()
-            .replace(/_/g, "\\_")
-            .replace(/\*/g, "\\*")
-            .replace(/\[/g, "\\[")
-            .replace(/`/g, "\\`");
 
 
         console.log('Yayın Akışı' + yayinAkisi.toString());
