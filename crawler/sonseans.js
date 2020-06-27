@@ -42,13 +42,15 @@ function fetch(){
         for(i = 0; i < movieTitles.length; i++){
             yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
         }
-        console.log('Yayın Akışı' + yayinAkisi);
 
         yayinAkisi = yayinAkisi.toString()
             .replace(/_/g, "\\_")
             .replace(/\*/g, "\\*")
             .replace(/\[/g, "\\[")
             .replace(/`/g, "\\`");
+
+
+        console.log('Yayın Akışı' + yayinAkisi.toString());
         return yayinAkisi;
     }).catch(function(err){
         //handle error
