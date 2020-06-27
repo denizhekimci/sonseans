@@ -47,7 +47,7 @@ bot.onText(/^\/trt2/, function (message) {
 
     crawler.fetch().then(function (yayinAkisi)
     {
-        var txt = yayinAkisi
+        var txt = "*" + yayinAkisi.movieTimes + ""*" + yayinAkisi.movieTitles ";
 
         bot.sendMessage(chatId,
             txt, {
