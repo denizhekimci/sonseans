@@ -21,11 +21,6 @@ function fetch(){
 
             movieTimes.push({});
             movieTimes.range = $(this).text().trim();
-            movieTimes.replace("_", "\\_")
-                .replace("*", "\\*")
-                .replace("[", "\\[")
-                .replace("`", "\\`")
-                .replace(":", "\\:");
         });
 
         var movieTitles = [];
@@ -34,14 +29,20 @@ function fetch(){
 
             movieTitles.push({});
             movieTitles.range = $(this).text().trim();
-            movieTitles.replace("_", "\\_")
+        });
+
+        for(i = 0; i < movieTitles.length; i++){
+            movieTimes[i] = movieTimes[i].toString().replace("_", "\\_")
                 .replace("*", "\\*")
                 .replace("[", "\\[")
                 .replace("`", "\\`")
                 .replace(":", "\\:");
-        });
 
-        for(i = 0; i < movieTitles.length; i++){
+            movieTitles[i] = movieTitles[i].toString().replace("_", "\\_")
+                .replace("*", "\\*")
+                .replace("[", "\\[")
+                .replace("`", "\\`")
+                .replace(":", "\\:");
             yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
         }
 
