@@ -27,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crawler/sonseans.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state relative-caret-position="303">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -50,6 +50,14 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>yabanci</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>yerli</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -164,12 +172,12 @@
       <workItem from="1591860092713" duration="1735000" />
       <workItem from="1591862820513" duration="767000" />
       <workItem from="1591873117277" duration="2629000" />
-      <workItem from="1593235552048" duration="18883000" />
+      <workItem from="1593235552048" duration="19192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24014000" />
+    <option name="totallyTimeSpent" value="24323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -315,8 +323,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/sonseans.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="303">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>

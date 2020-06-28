@@ -13,29 +13,52 @@ function fetch(){
 
         var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
 
-        String yayinAkisi = null;
+        var yayinAkisi = [];
 
-        var movieTimes = [];
+        var yerliFilmSaati = [];
+        $chunk('p.tur96 > a > span.aks0').each(function (i, elem) {
+            console.log(yerliFilmSaati);
+
+            yerliFilmSaati.push({});
+            yerliFilmSaati[i] = $(this).text().trim();
+        });
+
+        var yerliFilmAdi = [];
+        $chunk('p.tur96 > a > span.aks1').each(function (i, elem) {
+            console.log(yerliFilmAdi);
+
+            yerliFilmAdi.push({});
+            yerliFilmAdi[i] = $(this).text().trim();
+        });
+
+        var yabanciFilmSaati = [];
         $chunk('p.tur97 > a > span.aks0').each(function (i, elem) {
-            console.log(movieTimes);
+            console.log(yabanciFilmSaati);
 
-            movieTimes.push({});
-            movieTimes[i] = $(this).text().trim();
+            yabanciFilmSaati.push({});
+            yabanciFilmSaati[i] = $(this).text().trim();
         });
 
-        var movieTitles = [];
+        var yabanciFilmAdi = [];
         $chunk('p.tur97 > a > span.aks1').each(function (i, elem) {
-            console.log(movieTitles);
+            console.log(yabanciFilmAdi);
 
-            movieTitles.push({});
-            movieTitles[i] = $(this).text().trim();
+            yabanciFilmAdi.push({});
+            yabanciFilmAdi[i] = $(this).text().trim();
         });
 
-        for(i = 0; i < movieTitles.length; i++){
-            movieTimes[i] = movieTimes[i].toString();
+        for(i = 0; i < yerliFilmAdi.length; i++){
+            yerliFilmSaati[i] = yerliFilmSaati[i].toString();
 
-            movieTitles[i] = movieTitles[i].toString();
-            yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
+            yerliFilmAdi[i] = yerliFilmAdi[i].toString();
+            yayinAkisi += yerliFilmSaati[i] + ' - ' + yerliFilmAdi[i] + '\n';
+        }
+
+        for(i = 0; i < yabanciFilmAdi.length; i++){
+            yabanciFilmSaati[i] = yabanciFilmSaati[i].toString();
+
+            yabanciFilmAdi[i] = yabanciFilmAdi[i].toString();
+            yayinAkisi += yabanciFilmSaati[i] + ' - ' + yabanciFilmAdi[i] + '\n';
         }
 
         return yayinAkisi;
