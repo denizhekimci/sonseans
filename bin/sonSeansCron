@@ -12,7 +12,7 @@ function execute(){
 
     crawler.fetch().then(function(yayinAkisi){
 
-         var txt = " TRT2'de bugün: " + yayinAkisi  ;
+         var txt = yayinAkisi  ;
 
         firebase
             .getChatsRF()
@@ -21,7 +21,7 @@ function execute(){
 
                     var chat = data.val();
 
-                    bot.sendMessage(chat.id, "Son Seans")
+                    bot.sendMessage(chat.id, "TRT2'de bugün:")
                         .then(function(){
 
                             bot.sendMessage(chat.id,
