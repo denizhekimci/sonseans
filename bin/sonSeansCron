@@ -21,15 +21,13 @@ function execute(){
 
                     var chat = data.val();
 
-                    bot.sendMessage(chat.id)
-                        .then(function(){
+
 
                             bot.sendMessage(chat.id,
                                 txt, {
                                     "parse_mode" : 'Markdown'
                                 }).then(function(){ console.log("bot sended message..."); });
 
-                        });
 
                 });
             });
