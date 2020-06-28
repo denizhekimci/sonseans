@@ -32,17 +32,9 @@ function fetch(){
         });
 
         for(i = 0; i < movieTitles.length; i++){
-            movieTimes[i] = movieTimes[i].toString().replace("_", "\\_")
-                .replace("*", "\\*")
-                .replace("[", "\\[")
-                .replace("`", "\\`")
-                .replace(":", "\\:");
+            movieTimes[i] = movieTimes[i].toString();
 
-            movieTitles[i] = movieTitles[i].toString().replace("_", "\\_")
-                .replace("*", "\\*")
-                .replace("[", "\\[")
-                .replace("`", "\\`")
-                .replace(":", "\\:");
+            movieTitles[i] = movieTitles[i].toString();
             yayinAkisi += movieTimes[i] + ' - ' + movieTitles[i] + '\n';
         }
 
