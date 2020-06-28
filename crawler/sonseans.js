@@ -51,6 +51,8 @@ function fetch(){
             yerliFilmSaati[i] = yerliFilmSaati[i].toString();
 
             yerliFilmAdi[i] = yerliFilmAdi[i].toString();
+            if (!isNaN(yerliFilmAdi))
+                yayinAkisi += '\nYerli Filmler: \n';
             yayinAkisi += yerliFilmSaati[i] + ' - ' + yerliFilmAdi[i] + '\n';
         }
 
@@ -58,6 +60,9 @@ function fetch(){
             yabanciFilmSaati[i] = yabanciFilmSaati[i].toString();
 
             yabanciFilmAdi[i] = yabanciFilmAdi[i].toString();
+
+            if (!isNaN(yabanciFilmAdi))
+                yayinAkisi += '\nYabancı Filmler: \n';
             yayinAkisi += yabanciFilmSaati[i] + ' - ' + yabanciFilmAdi[i] + '\n';
         }
 
