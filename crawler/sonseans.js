@@ -20,7 +20,7 @@ function fetch(){
             console.log(movieTimes);
 
             movieTimes.push({});
-            movieTimes.range = $(this).text().trim();
+            movieTimes[i] = $(this).text().trim();
         });
 
         var movieTitles = [];
@@ -28,7 +28,7 @@ function fetch(){
             console.log(movieTitles);
 
             movieTitles.push({});
-            movieTitles.range = $(this).text().trim();
+            movieTitles[i] = $(this).text().trim();
         });
 
         for(i = 0; i < movieTitles.length; i++){
