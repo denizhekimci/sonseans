@@ -13,7 +13,7 @@ function fetch(){
 
         var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
 
-        var yayinAkisi = [];
+        String yayinAkisi = null;
 
         var movieTimes = [];
         $chunk('p.tur97 > a > span.aks0').each(function (i, elem) {
