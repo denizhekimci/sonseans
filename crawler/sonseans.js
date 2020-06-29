@@ -69,11 +69,14 @@ function fetch(){
 
         function addToAkis(saat, adi) {
             for (var i = 0; i < adi.length; i++) {
-                saat[i] = saat[i].toString();
+                if (saat[i] < '22.00' && saat[i] > '20.00'){
+                    saat[i] = saat[i].toString();
 
-                adi[i] = adi[i].toString();
+                    adi[i] = adi[i].toString();
 
-                yayinAkisi += saat[i] + ' - ' + adi[i] + '\n';
+                    yayinAkisi += saat[i] + ' - ' + adi[i] + '\n';
+                }else
+                    continue;
             }
         }
 
