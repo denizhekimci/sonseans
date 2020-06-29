@@ -20,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/bin/sonSeansCron">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="379">
-              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+              <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -47,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/bin/web">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
-              <caret line="49" column="34" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="34" />
+              <caret line="49" column="36" lean-forward="true" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -86,8 +86,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/crawler/sonseans.js" />
         <option value="$PROJECT_DIR$/firebase/sonseansbot-a8463-firebase-connection.json" />
-        <option value="$PROJECT_DIR$/bin/web" />
         <option value="$PROJECT_DIR$/bin/sonSeansCron" />
+        <option value="$PROJECT_DIR$/bin/web" />
       </list>
     </option>
   </component>
@@ -171,12 +171,12 @@
       <workItem from="1593235552048" duration="20745000" />
       <workItem from="1593410608944" duration="12000" />
       <workItem from="1593432419951" duration="2070000" />
-      <workItem from="1593438515463" duration="749000" />
+      <workItem from="1593438515463" duration="888000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28707000" />
+    <option name="totallyTimeSpent" value="28846000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,14 +296,14 @@
     <entry file="file://$PROJECT_DIR$/bin/sonSeansCron">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
-          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/web">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="49" column="34" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="34" />
+          <caret line="49" column="36" lean-forward="true" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
         </state>
       </provider>
     </entry>

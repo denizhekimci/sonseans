@@ -47,7 +47,7 @@ bot.onText(/^\/trt2/, function (message) {
     {
         var txt = "TRT2 Film Kuşağında bugün: \n" + yayinAkisi;
 
-        bot.sendMessage('@sonseans',
+        bot.sendMessage('@snsnsdnm',
             txt, {
                 "parse_mode" : 'Markdown'
             }).then(function () {console.log('bot replied ...'); });
