@@ -14,19 +14,32 @@ function fetch(){
         var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
 
         var yayinAkisi = [];
-
         var yerliFilmSaati = [];
-        $chunk('p.tur96 > a > span.aks0').each(function (i, elem) {
-            console.log(yerliFilmSaati);
-
-            yerliFilmSaati.push({});
-            yerliFilmSaati[i] = $(this).text().trim();
-        });
-
         var yerliFilmAdi = [];
-        $chunk('p.tur96 > a > span.aks1').each(function (i, elem) {
-            console.log(yerliFilmAdi);
+        var yabanciFilmSaati = [];
+        var yabanciFilmAdi = [];
 
+        const yabanciFilmSaatTag = 'p.tur96 > a > span.aks0';
+        const yabanciFilmAdiTag = 'p.tur96 > a > span.aks1';
+        const yerliFilmSaatTag = 'p.tur97 > a > span.aks0';
+        const yerliFilmAdiTag = 'p.tur97 > a > span.aks1';
+
+        function addMovieInfo(htmlTag, info) {
+            $chunk(htmlTag).each(function (i, elem) {
+                console.log(info);
+
+                info.push({});
+                info[i] = $(this).text().trim();
+            });
+        }
+
+        addMovieInfo(yabanciFilmSaatTag, yabanciFilmSaati);
+        addMovieInfo(yabanciFilmAdiTag, yabanciFilmAdi);
+        addMovieInfo(yerliFilmSaatTag, yerliFilmSaati);
+        addMovieInfo(yerliFilmAdiTag, yerliFilmAdi);
+
+        /*var yerliFilmAdi = [];
+        $chunk('p.tur96 > a > span.aks1').each(function (i, elem) {
             yerliFilmAdi.push({});
             yerliFilmAdi[i] = $(this).text().trim();
         });
@@ -45,26 +58,29 @@ function fetch(){
 
             yabanciFilmAdi.push({});
             yabanciFilmAdi[i] = $(this).text().trim();
-        });
+        });*/
 
-        for(i = 0; i < yerliFilmAdi.length; i++){
+        /*for(i = 0; i < yerliFilmAdi.length; i++){
             yerliFilmSaati[i] = yerliFilmSaati[i].toString();
 
             yerliFilmAdi[i] = yerliFilmAdi[i].toString();
-            if (!isNaN(yerliFilmAdi))
-                yayinAkisi += '\nYerli Filmler: \n';
             yayinAkisi += yerliFilmSaati[i] + ' - ' + yerliFilmAdi[i] + '\n';
+        }*/
+
+        function addToAkis(saat, adi) {
+            for (var i = 0; i < adi.length; i++) {
+                saat[i] = saat[i].toString();
+
+                adi[i] = adi[i].toString();
+
+                yayinAkisi += saat[i] + ' - ' + saat[i] + '\n';
+            }
         }
 
-        for(i = 0; i < yabanciFilmAdi.length; i++){
-            yabanciFilmSaati[i] = yabanciFilmSaati[i].toString();
 
-            yabanciFilmAdi[i] = yabanciFilmAdi[i].toString();
+        addToAkis(yerliFilmSaati, yerliFilmAdi);
+        addToAkis(yabanciFilmSaati, yabanciFilmAdi);
 
-            if (!isNaN(yabanciFilmAdi))
-                yayinAkisi += '\nYabancı Filmler: \n';
-            yayinAkisi += yabanciFilmSaati[i] + ' - ' + yabanciFilmAdi[i] + '\n';
-        }
 
         return yayinAkisi;
     }).catch(function(err){
