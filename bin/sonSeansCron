@@ -23,7 +23,7 @@ function execute(){
 
 
 
-                            bot.sendMessage(chat.id,
+                            bot.sendMessage('@sonseans',
                                 txt, {
                                     "parse_mode" : 'Markdown'
                                 }).then(function(){ console.log("bot sended message..."); });
