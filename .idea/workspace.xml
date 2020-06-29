@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a54215c1-78f0-4d39-b5b1-b54e015446e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/6/167fde54f42f6eacdba19d5a67620be9b654a5bd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/479a1b43f06643840a111b56d3cb932381d709e0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/sonseans.js" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/sonseans.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crawler/sonseans.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="81" column="52" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
+            <state relative-caret-position="307">
+              <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -144,12 +140,12 @@
       <workItem from="1591873117277" duration="2629000" />
       <workItem from="1593235552048" duration="20745000" />
       <workItem from="1593410608944" duration="12000" />
-      <workItem from="1593432419951" duration="1020000" />
+      <workItem from="1593432419951" duration="1590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26908000" />
+    <option name="totallyTimeSpent" value="27478000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -275,8 +271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/sonseans.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="81" column="52" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
+        <state relative-caret-position="307">
+          <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
         </state>
       </provider>
     </entry>

@@ -73,7 +73,7 @@ function fetch(){
 
                 adi[i] = adi[i].toString();
 
-                yayinAkisi += saat[i] + ' - ' + saat[i] + '\n';
+                yayinAkisi += saat[i] + ' - ' + adi[i] + '\n';
             }
         }
 
