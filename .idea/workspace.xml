@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a54215c1-78f0-4d39-b5b1-b54e015446e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/web" beforeDir="false" afterPath="$PROJECT_DIR$/bin/web" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/bin/web">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
-              <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -171,12 +170,12 @@
       <workItem from="1593235552048" duration="20745000" />
       <workItem from="1593410608944" duration="12000" />
       <workItem from="1593432419951" duration="2070000" />
-      <workItem from="1593438515463" duration="174000" />
+      <workItem from="1593438515463" duration="327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28132000" />
+    <option name="totallyTimeSpent" value="28285000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -303,7 +302,7 @@
     <entry file="file://$PROJECT_DIR$/bin/web">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
         </state>
       </provider>
     </entry>
