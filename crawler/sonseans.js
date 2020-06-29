@@ -38,34 +38,6 @@ function fetch(){
         addMovieInfo(yerliFilmSaatTag, yerliFilmSaati);
         addMovieInfo(yerliFilmAdiTag, yerliFilmAdi);
 
-        /*var yerliFilmAdi = [];
-        $chunk('p.tur96 > a > span.aks1').each(function (i, elem) {
-            yerliFilmAdi.push({});
-            yerliFilmAdi[i] = $(this).text().trim();
-        });
-
-        var yabanciFilmSaati = [];
-        $chunk('p.tur97 > a > span.aks0').each(function (i, elem) {
-            console.log(yabanciFilmSaati);
-
-            yabanciFilmSaati.push({});
-            yabanciFilmSaati[i] = $(this).text().trim();
-        });
-
-        var yabanciFilmAdi = [];
-        $chunk('p.tur97 > a > span.aks1').each(function (i, elem) {
-            console.log(yabanciFilmAdi);
-
-            yabanciFilmAdi.push({});
-            yabanciFilmAdi[i] = $(this).text().trim();
-        });*/
-
-        /*for(i = 0; i < yerliFilmAdi.length; i++){
-            yerliFilmSaati[i] = yerliFilmSaati[i].toString();
-
-            yerliFilmAdi[i] = yerliFilmAdi[i].toString();
-            yayinAkisi += yerliFilmSaati[i] + ' - ' + yerliFilmAdi[i] + '\n';
-        }*/
 
         function addToAkis(saat, adi) {
             for (var i = 0; i < adi.length; i++) {
