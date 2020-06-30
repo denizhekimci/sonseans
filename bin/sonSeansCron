@@ -17,9 +17,8 @@ function execute(){
         firebase
             .getChatsRF()
             .once("value", function(snapshot){
-                snapshot.forEach(function(data){
                     console.log("bot message...");
-                    var chat = data.val();
+                    var chat = snapshot.val();
                             bot.sendMessage('@snseans',
                                 txt, {
                                     "parse_mode" : 'Markdown'
