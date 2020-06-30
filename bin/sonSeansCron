@@ -12,7 +12,7 @@ function execute(){
 
     crawler.fetch().then(function(yayinAkisi){
 
-         var txt = "TRT2 Film Kuşağında bugün: \n" + yayinAkisi;  ;
+        var txt = "TRT2 Film Kuşağında bugün: \n" + yayinAkisi;  ;
 
         firebase
             .getChatsRF()
