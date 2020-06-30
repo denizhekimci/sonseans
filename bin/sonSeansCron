@@ -12,7 +12,7 @@ function execute(){
 
     crawler.fetch().then(function(yayinAkisi){
 
-         var txt = "TRT2 Film Kuşağında bugün: \n " + yayinAkisi;  ;
+         var txt = "TRT2 Film Kuşağında bugün: \n" + yayinAkisi;  ;
 
         firebase
             .getChatsRF()
@@ -20,10 +20,7 @@ function execute(){
                 snapshot.forEach(function(data){
 
                     var chat = data.val();
-
-
-
-                            bot.sendMessage('@sonseans',
+                            bot.sendMessage('@snseans',
                                 txt, {
                                     "parse_mode" : 'Markdown'
                                 }).then(function(){ console.log("bot sended message..."); });
