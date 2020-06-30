@@ -17,13 +17,13 @@ function execute(){
         firebase
             .getChatsRF()
             .once("value", function(snapshot){
-                snapshot.forEach(function(data){
+                snapshot.once(function(data){
 
-                  /*  var chat = data.val();
+                    var chat = data.val();
                             bot.sendMessage('@snseans',
                                 txt, {
                                     "parse_mode" : 'Markdown'
-                                }).then(function(){ console.log("bot sended message..."); });*/
+                                }).then(function(){ console.log("bot sended message..."); });
 
 
                 });
