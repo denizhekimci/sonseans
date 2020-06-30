@@ -26,8 +26,6 @@ function fetch(){
 
         function addMovieInfo(htmlTag, info) {
             $chunk(htmlTag).each(function (i, elem) {
-                console.log(info);
-
                 info.push({});
                 info[i] = $(this).text().trim();
             });
