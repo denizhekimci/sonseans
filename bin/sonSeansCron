@@ -17,8 +17,8 @@ function execute(){
         firebase
             .getChatsRF()
             .once("value", function(snapshot){
-                snapshot.once(function(data){
-
+                snapshot.forEach(function(data){
+                    console.log("bot message...");
                     var chat = data.val();
                             bot.sendMessage('@snseans',
                                 txt, {
