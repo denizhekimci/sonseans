@@ -27,7 +27,6 @@ function execute(){
 
                 });
             });
-
 }
 
 // Task is running
