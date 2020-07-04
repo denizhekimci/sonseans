@@ -1,20 +1,20 @@
-const got       = require('got');
-const cheerio   = require('cheerio');
+const got = require('got');
+const cheerio = require('cheerio');
 const Nightmare = require('nightmare');
-const nightmare = Nightmare({show: true});
+const nightmare = Nightmare({ show: true });
 const PROTOCOL = "https:";
 const HOST = "https://www.trt.net.tr";
 
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
 const URLTRAltyazi = 'https://turkcealtyazi.org/index.php';
 
-function fetch(){
+function fetch() {
 
-    return got(URL).then(function(data){
+    return got(URL).then(function (data) {
 
-        var $ = cheerio.load(data.body,{decodeEntities:false});
+        var $ = cheerio.load(data.body, { decodeEntities: false });
 
-        var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
+        var $chunk = cheerio.load($('#gunlukAkisDIV').html(), { decodeEntities: false })
 
         var yayinAkisi = [];
         var yerliFilmSaati = [];
@@ -42,13 +42,13 @@ function fetch(){
 
         function addToAkis(saat, adi) {
             for (var i = 0; i < adi.length; i++) {
-                if (saat[i] < '22.00' && saat[i] > '20.00'){
+                if (saat[i] < '22.00' && saat[i] > '20.00') {
                     saat[i] = saat[i].toString();
 
                     adi[i] = adi[i].toString();
 
                     yayinAkisi += saat[i] + ' - ' + adi[i] + '\n';
-                }else
+                } else
                     continue;
             }
         }
@@ -59,39 +59,38 @@ function fetch(){
 
 
         return yayinAkisi;
-    }).catch(function(err){
+    }).catch(function (err) {
         //handle error
         return err;
     });
 }
 
-function fetchWithNightmare(){
-    let getData = html => {
-        data = [];
-        const d = cheerio.load(html);
-        d('#ncontent > div > div.sub-container.nleft > div:nth-child(1) > div:nth-child(4) > ul > li:nth-child(1) > div.incdiv')
+let getData = html => {
+    data = [];
+    const d = cheerio.load(html);
+    d('#ncontent > div > div.sub-container.nleft > div:nth-child(1) > div:nth-child(4) > ul > li:nth-child(1) > div.incdiv')
         .each((i, elem) => {
             data.push({
                 title: d(elem).text()
             });
         });
-        return data;
-    }
-    return nightmare
-        .goto(URLTRAltyazi)
-        .wait('body')
-        .evaluate(() => document.querySelector('body').innerHTML)
-        .end()
-        .then(function(data){
-            return getData(data);
-            //console.log(getData(data));
-        }).catch(err => {
-            console.log(err);
-            return err;
-        });
+    return data;
 }
+nightmare
+    .goto(URLTRAltyazi)
+    .wait('body')
+    .evaluate(() => document.querySelector('body').innerHTML)
+    .end()
+    .then(function (data) {
+        return getData(data);
+        //console.log(getData(data));
+    }).catch(err => {
+        console.log(err);
+        return err;
+    });
+
 
 module.exports = {
-    fetch : fetch,
-    fetchWithNightmare : fetchWithNightmare
+    fetch: fetch,
+    nightmare: nightmare
 };
