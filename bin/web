@@ -53,6 +53,17 @@ bot.onText(/^\/trt2/, function (message) {
             }).then(function () {console.log('bot replied ...'); });
 
     });
+
+    crawler.fetchWithNightmare().then(function (aciklama)
+    {
+        var txtAciklama = "Açıklama: \n" + aciklama;
+        bot.sendMessage('@snseanstest',
+            txtAciklama, {
+                "parse_mode" : 'Markdown'
+            }).then(function () {
+                console.log('Aciklama posted ...');
+            });
+    });
 });
 
 

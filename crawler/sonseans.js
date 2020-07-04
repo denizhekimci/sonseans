@@ -1,9 +1,12 @@
 const got       = require('got');
 const cheerio   = require('cheerio');
+const Nightmare = require('nightmare');
+const nightmare = Nightmare({show: true});
 const PROTOCOL = "https:";
 const HOST = "https://www.trt.net.tr";
 
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
+const URLTRAltyazi = 'https://turkcealtyazi.org/index.php';
 
 function fetch(){
 
@@ -60,6 +63,32 @@ function fetch(){
         //handle error
         return err;
     });
+}
+
+function fetchWithNightmare(){
+    let getData = html => {
+        data = [];
+        const d = cheerio.load(html);
+        d('#ncontent > div > div.sub-container.nleft > div:nth-child(1) > div:nth-child(4) > ul > li:nth-child(1) > div.incdiv')
+        .each((i, elem) => {
+            data.push({
+                title: d(elem).text()
+            });
+        });
+        return data;
+    }
+    return nightmare
+        .goto(URLTRAltyazi)
+        .wait('body')
+        .evaluate(() => document.querySelector('body').innerHTML)
+        .end()
+        .then(response => {
+            console.log(getData(response));
+            return getData(response);
+        }).catch(err => {
+            console.log(err);
+            return err;
+        });
 }
 
 module.exports = {
