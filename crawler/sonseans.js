@@ -87,6 +87,7 @@ function fetchWithNightmare(){
             //console.log(getData(data));
         }).catch(err => {
             console.log(err);
+            return err;
         });
 }
 
