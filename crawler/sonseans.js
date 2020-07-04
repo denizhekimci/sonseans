@@ -77,9 +77,8 @@ let getData = html => {
     return data;
 }
 
-function fetchWithNightmare(response) {
-    let data ='';
-    return new Promise(function (resolve, reject) {
+let getMovieDescription = function() {
+    return new Promise(function(resolve, reject) {
         nightmare
             .goto(URLTRAltyazi)
             .wait('body')
@@ -99,10 +98,15 @@ function fetchWithNightmare(response) {
                 //handle error
                 return err;
             });
-    }, Promise.resolve([])).then(function(results){
-    console.dir(results);
-    return nightmare.end();
-    });
+            
+    })
+}
+
+function fetchWithNightmare(aciklama) {
+    return getMovieDescription(aciklama)
+    .then(function(data) {
+        return nightmare.end();
+    })
 
 }
 
