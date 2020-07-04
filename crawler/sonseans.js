@@ -78,7 +78,7 @@ let getData = html => {
 }
 
 function fetchWithNightmare() {
-    return nightmare
+    nightmare
         .goto(URLTRAltyazi)
         .wait('body')
         .evaluate(() => document.querySelector('body').innerHTML)
