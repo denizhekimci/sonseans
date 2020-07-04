@@ -81,8 +81,8 @@ nightmare
     .wait('body')
     .evaluate(() => document.querySelector('body').innerHTML)
     .end()
-    .then(function (data) {
-        return getData(data);
+    .then(response => {
+        return getData(response);
         //console.log(getData(data));
     }).catch(err => {
         console.log(err);
