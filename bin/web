@@ -5,9 +5,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
 
-const firebase  = require('../firebase/util');
-const crawler  = require('../crawler/sonseans');
-const properties  = require('../package.json');
+const firebase = require('../firebase/util');
+const crawler = require('../crawler/sonseans');
+const properties = require('../package.json');
 
 const bot = new TelegramBot(properties.token);
 bot.setWebHook("https://sonseanstest.herokuapp.com/" + properties.token);
@@ -31,7 +31,7 @@ server.listen(port).on('error', function onError(error) {
     });
 
 // webhook address listener
-app.post('/' + bot.token, function(req, res) {
+app.post('/' + bot.token, function (req, res) {
     bot.processUpdate(req.body);
     res.sendStatus(200);
 });
@@ -43,14 +43,13 @@ bot.onText(/^\/trt2/, function (message) {
 
     firebase.saveChat(chatId, message.chat);
 
-    crawler.fetch().then(function (yayinAkisi)
-    {
+    crawler.fetch().then(function (yayinAkisi) {
         var txt = "TRT2 Film Kuşağında bugün: \n" + yayinAkisi;
 
         bot.sendMessage('@snseanstest',
             txt, {
-                "parse_mode" : 'Markdown'
-            }).then(function () {console.log('bot replied ...'); });
+                "parse_mode": 'Markdown'
+            }).then(function () { console.log('bot replied ...'); });
 
     });
 });
@@ -61,14 +60,16 @@ bot.onText(/^\/aciklama/, function (message) {
     firebase.saveChat(chatId, message.chat);
 
 
-    crawler.fetchWithNightmare().then(function (aciklama)
-    {
+    crawler.fetchWithNightmare().then(function (aciklama) {
         var txtAciklama = "Açıklama: \n" + aciklama;
         bot.sendMessage('@snseanstest',
             txtAciklama, {
-                "parse_mode" : 'Markdown'
+                "parse_mode": 'Markdown'
             }).then(function () {
                 console.log('Aciklama posted ...');
+            }).catch(function (err) {
+                //handle error
+                return err;
             });
     });
 });

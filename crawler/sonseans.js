@@ -92,7 +92,7 @@ function fetchWithNightmare() {
                         title: d(elem).text()
                     });
                 });
-            return nightmare;
+            return response;
             //console.log(getData(data));
         }).catch(function (err) {
             //handle error
