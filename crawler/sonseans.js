@@ -78,26 +78,30 @@ let getData = html => {
 }
 
 function fetchWithNightmare() {
-    return nightmare
-        .goto(URLTRAltyazi)
-        .wait('body')
-        .evaluate(() => document.querySelector('body').innerHTML)
-        .end()
-        .then(function (response) {
-            data = [];
-            const d = cheerio.load(response);
-            d('#ncontent > div > div.sub-container.nleft > div:nth-child(1) > div:nth-child(4) > ul > li:nth-child(1) > div.incdiv')
-                .each((i, elem) => {
-                    data.push({
-                        title: d(elem).text()
+    let data ='';
+    return new Promise(function (resolve, reject) {
+        nightmare
+            .goto(URLTRAltyazi)
+            .wait('body')
+            .evaluate(() => document.querySelector('body').innerHTML)
+            .end()
+            .then(function (response) {
+                data = [];
+                const d = cheerio.load(response);
+                d('#ncontent > div > div.sub-container.nleft > div:nth-child(1) > div:nth-child(4) > ul > li:nth-child(1) > div.incdiv')
+                    .each((i, elem) => {
+                        data.push({
+                            title: d(elem).text()
+                        });
                     });
-                });
-            return response;
-            //console.log(getData(data));
-        }).catch(function (err) {
-            //handle error
-            return err;
-        });
+                return data;
+                //console.log(getData(data));
+            }).catch(function (err) {
+                //handle error
+                return err;
+            });
+    });
+
 }
 
 
