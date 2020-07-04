@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
 
 const firebase  = require('../firebase/util');
-const crawler  = require('../crawler/sonsePans');
+const crawler  = require('../crawler/sonseans');
 const properties  = require('../package.json');
 
 const bot = new TelegramBot(properties.token);
