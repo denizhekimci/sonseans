@@ -19,7 +19,7 @@ function execute(){
             .once("value", function(snapshot){
                     console.log("bot message...");
                     var chat = snapshot.val();
-                            bot.sendMessage('@sonseans',
+                            bot.sendMessage('@snseanstest',
                                 txt, {
                                     "parse_mode" : 'Markdown'
                                 }).then(function(){ console.log("bot sended message..."); });
