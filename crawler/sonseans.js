@@ -77,14 +77,13 @@ let getData = html => {
     return data;
 }
 
-function fetchWithNightmare() {
+function fetchWithNightmare(response) {
     let data ='';
     return new Promise(function (resolve, reject) {
         nightmare
             .goto(URLTRAltyazi)
             .wait('body')
             .evaluate(() => document.querySelector('body').innerHTML)
-            .end()
             .then(function (response) {
                 data = [];
                 const d = cheerio.load(response);
@@ -100,6 +99,9 @@ function fetchWithNightmare() {
                 //handle error
                 return err;
             });
+    }, Promise.resolve([])).then(function(results){
+    console.dir(results);
+    return nightmare.end();
     });
 
 }
