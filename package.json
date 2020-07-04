@@ -1,7 +1,6 @@
 {
   "name": "sonseanstest",
   "version": "1.0.0",
-  "description": "",
   "private": true,
   "scripts": {
     "start": "node ./bin/web"
@@ -39,5 +38,7 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "main": "sonseans.js",
+  "description": ""
 }
