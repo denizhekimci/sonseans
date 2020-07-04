@@ -90,5 +90,6 @@ function fetchWithNightmare(){
 }
 
 module.exports = {
-    fetch : fetch
+    fetch : fetch,
+    fetchWithNightmare : fetchWithNightmare
 };
