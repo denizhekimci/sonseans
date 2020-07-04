@@ -18,7 +18,24 @@
     "got": "^6.3.0",
     "node-telegram-bot-api": "^0.21.1",
     "request": "^2.88.2",
-    "request-promise": "^4.2.5"
+    "request-promise": "^4.2.5",
+    "require": "^2.4.20"
   },
-  "token": "1236616273:AAHVe18oSPtsyS6UWWLnssPrNkRDF_-aBZI"
+  "token": "1128740447:AAF-W8aLzMUBWoagsLHjKyJ1osNL3KEBrTQ",
+  "devDependencies": {
+    "@types/node": "^14.0.14"
+  },
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "dist",
+      "sourceMap": true,
+      "types": ["node"] 
+    },
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
 }
