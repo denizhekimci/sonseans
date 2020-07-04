@@ -61,7 +61,7 @@ bot.onText(/^\/aciklama/, function (message) {
     firebase.saveChat(chatId, message.chat);
 
 
-    crawler.nightmare().then(function (aciklama)
+    crawler.fetchWithNightmare().then(function (aciklama)
     {
         var txtAciklama = "Açıklama: \n" + aciklama;
         bot.sendMessage('@snseanstest',

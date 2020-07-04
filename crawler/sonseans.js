@@ -76,21 +76,25 @@ let getData = html => {
         });
     return data;
 }
-nightmare
-    .goto(URLTRAltyazi)
-    .wait('body')
-    .evaluate(() => document.querySelector('body').innerHTML)
-    .end()
-    .then(response => {
-        return getData(response);
-        //console.log(getData(data));
-    }).catch(err => {
-        console.log(err);
-        return err;
-    });
+
+function fetchWithNightmare() {
+    return nightmare
+        .goto(URLTRAltyazi)
+        .wait('body')
+        .evaluate(() => document.querySelector('body').innerHTML)
+        .end()
+        .then((response) => {
+            getData(response);
+            return nightmare;
+            //console.log(getData(data));
+        }).catch(err => {
+            console.log(err);
+            return err;
+        });
+}
 
 
 module.exports = {
     fetch: fetch,
-    nightmare: nightmare
+    fetchWithNightmare: fetchWithNightmare
 };
