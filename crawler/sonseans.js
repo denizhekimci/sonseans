@@ -83,7 +83,8 @@ function fetchWithNightmare(){
         .evaluate(() => document.querySelector('body').innerHTML)
         .end()
         .then(function(data){
-            console.log(getData(data));
+            return getData(data);
+            //console.log(getData(data));
         }).catch(err => {
             console.log(err);
         });
