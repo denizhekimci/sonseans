@@ -6,7 +6,7 @@ const PROTOCOL = "https:";
 const HOST = "https://www.trt.net.tr";
 
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
-const URLTRAltyazi = 'https://turkcealtyazi.org/index.php';
+const URLTRAltyazi = 'https://turkcealtyazi.org';
 
 const puppeteer = require('puppeteer');
 
@@ -76,7 +76,7 @@ scrapeTRAltyazi = async (req, res) => {
     const page = await browser.newPage()
     await page.goto(URLTRAltyazi)
     await page.waitForSelector('#autoFindNew');
-    await page.type('#autoFindNew', {search})
+    await page.type('#autoFindNew', 'Arrival')
     await page.click('#nForm > input[type=submit]:nth-child(14)')
     await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3)')
    	const links = await page.$$('div:nth-child(1) > a');
