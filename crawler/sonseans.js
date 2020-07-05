@@ -69,7 +69,7 @@ function fetch() {
 
 scrapeTRAltyazi = async (req, res) => {
     let ret = [];
-    const { search } = req.query;
+    const { search } = 'Arrival';
     try {
         (async () => {
     const browser = await puppeteer.launch()
