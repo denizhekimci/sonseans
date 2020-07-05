@@ -94,6 +94,5 @@ exports.scrapeTRAltyazi = async (req, res) => {
 
 
 module.exports = {
-    fetch: fetch,
-    scrapeTRAltyazi: scrapeTRAltyazi
+    fetch: fetch
 };
