@@ -54,23 +54,3 @@ bot.onText(/^\/trt2/, function (message) {
     });
 });
 
-bot.onText(/^\/aciklama/, function (message) {
-    const chatId = message.chat.id;
-
-    firebase.saveChat(chatId, message.chat);
-
-
-    crawler.fetchWithNightmare().then(function (aciklama) {
-        var txtAciklama = "Açıklama: \n" + aciklama;
-        bot.sendMessage('@snseanstest',
-            txtAciklama, {
-                "parse_mode": 'Markdown'
-            }).then(function () {
-                console.log('Aciklama posted ...');
-            }).catch(function (err) {
-                //handle error
-                return err;
-            });
-    });
-});
-

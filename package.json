@@ -17,9 +17,11 @@
     "got": "^6.3.0",
     "nightmare": "^3.0.2",
     "node-telegram-bot-api": "^0.21.1",
+    "puppeteer": "^5.0.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "xvfb": "^0.4.0"
   },
   "token": "1128740447:AAF-W8aLzMUBWoagsLHjKyJ1osNL3KEBrTQ",
   "devDependencies": {

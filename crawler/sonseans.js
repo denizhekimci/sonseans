@@ -8,6 +8,8 @@ const HOST = "https://www.trt.net.tr";
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
 const URLTRAltyazi = 'https://turkcealtyazi.org/index.php';
 
+const puppeteer = require('puppeteer');
+
 function fetch() {
 
     return got(URL).then(function (data) {
@@ -65,53 +67,9 @@ function fetch() {
     });
 }
 
-let getData = html => {
-    data = [];
-    const d = cheerio.load(html);
-    d('#ncontent > div > div.sub-container.nleft > div:nth-child(1) > div:nth-child(4) > ul > li:nth-child(1) > div.incdiv')
-        .each((i, elem) => {
-            data.push({
-                title: d(elem).text()
-            });
-        });
-    return data;
-}
 
-let getMovieDescription = function() {
-    return new Promise(function(resolve, reject) {
-        nightmare
-            .goto(URLTRAltyazi)
-            .wait('body')
-            .evaluate(() => document.querySelector('body').innerHTML)
-            .then(function (response) {
-                data = [];
-                const d = cheerio.load(response);
-                d('#ncontent > div > div.sub-container.nleft > div:nth-child(1) > div:nth-child(4) > ul > li:nth-child(1) > div.incdiv')
-                    .each((i, elem) => {
-                        data.push({
-                            title: d(elem).text()
-                        });
-                    });
-                return data;
-                //console.log(getData(data));
-            }).catch(function (err) {
-                //handle error
-                return err;
-            });
-            
-    })
-}
-
-function fetchWithNightmare(aciklama) {
-    return getMovieDescription(aciklama)
-    .then(function(data) {
-        return nightmare.end();
-    })
-
-}
 
 
 module.exports = {
-    fetch: fetch,
-    fetchWithNightmare: fetchWithNightmare
+    fetch: fetch
 };
