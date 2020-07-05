@@ -67,7 +67,7 @@ function fetch() {
     });
 }
 
-exports.scrapeTRAltyazi = async (req, res) => {
+scrapeTRAltyazi = async (req, res) => {
     let ret = [];
     const { search } = req.query;
     try {
@@ -94,5 +94,6 @@ exports.scrapeTRAltyazi = async (req, res) => {
 
 
 module.exports = {
-    fetch: fetch
+    fetch: fetch,
+    scrapeTRAltyazi: scrapeTRAltyazi
 };
