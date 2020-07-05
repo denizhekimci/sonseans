@@ -67,9 +67,35 @@ function fetch() {
     });
 }
 
-
+function fetchDescription() {
+   return async (req, res) => {
+        let ret = [];
+        const { search } = req.query;
+        try {
+            (async () => {
+                const browser = await puppeteer.launch()
+                const page = await browser.newPage()
+                await page.goto(URLTRAltyazi)
+                await page.type('#autoFindNew', { search })
+                await page.click('#nForm > input[type=submit]:nth-child(14)')
+                await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3)')
+                const links = await page.$$('div:nth-child(1) > a');
+                await links[0].click();
+                const movie = await page.$$eval('#ncontent > div > div.sub-container.nleft > div.nm-block.nm-ozet > div', anchors => {
+                    return anchors.map(anchor => anchor.textContent.trim()).slice(0, 10)
+                })
+                console.log(movie)
+                await browser.close()
+            })()
+        }
+        catch (err) {
+            res.status(500).send(err.message);
+        }
+    }
+};
 
 
 module.exports = {
-    fetch: fetch
+    fetch: fetch,
+    fetchDescription: fetchDescription
 };

@@ -54,3 +54,18 @@ bot.onText(/^\/trt2/, function (message) {
     });
 });
 
+bot.onText(/^\/aciklama/, function (message) {
+    const chatId = message.chat.id;
+
+    firebase.saveChat(chatId, message.chat);
+
+    crawler.fetchDescription().then(function (aciklama) {
+        var txt = "TRT2 Film Kuşağında bugün: \n" + aciklama;
+
+        bot.sendMessage('@snseanstest',
+            txt, {
+                "parse_mode": 'Markdown'
+            }).then(function () { console.log('bot replied ...'); });
+
+    });
+});
