@@ -75,6 +75,7 @@ scrapeTRAltyazi = async (req, res) => {
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage()
     await page.goto(URLTRAltyazi)
+    await page.waitForSelector('#autoFindNew');
     await page.type('#autoFindNew', {search})
     await page.click('#nForm > input[type=submit]:nth-child(14)')
     await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3)')
