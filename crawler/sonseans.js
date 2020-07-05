@@ -72,7 +72,7 @@ scrapeTRAltyazi = async (req, res) => {
     const { search } = 'Arrival';
     try {
         (async () => {
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage()
     await page.goto(URLTRAltyazi)
     await page.type('#autoFindNew', {search})
