@@ -79,13 +79,13 @@ scrapeTRAltyazi = async (req, res) => {
     await page.type('#autoFindNew', 'Arrival')
     await page.click('#nForm > input[type=submit]:nth-child(14)')
     await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3)')
-   	const links = await page.$$('div:nth-child(1) > a');
-    await links[0].click();
-    const movie = await page.$$eval('#ncontent > div > div.sub-container.nleft > div.nm-block.nm-ozet > div', anchors => {
-      return anchors.map(anchor => anchor.textContent.trim()).slice(0, 10)
-    })
-    console.log(movie)
+   	await page.click('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3) > div:nth-child(2) > a')
+    await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div.nm-block.nm-ozet > div')
+    const element = await page.$(".ozet-goster")
+    const text = await (await element.getProperty('textContent')).jsonValue();
+    console.log(text)
     await browser.close()
+    return text;
   })()
     }
     catch (err) {
