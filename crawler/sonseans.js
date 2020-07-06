@@ -67,8 +67,7 @@ function fetch() {
     });
 }
 
-scrapeTRAltyazi = async (req, res) => {
-    let ret = [];
+function scrapeTRAltyazi () {
     const { search } = 'Arrival';
     try {
         (async () => {
@@ -85,6 +84,7 @@ scrapeTRAltyazi = async (req, res) => {
             const text = await (await element.getProperty('textContent')).jsonValue();
             console.log(text)
             await browser.close()
+            return text;
         })()
     }
     catch (err) {

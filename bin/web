@@ -59,8 +59,8 @@ bot.onText(/^\/aciklama/, function (message) {
 
     firebase.saveChat(chatId, message.chat);
 
-    crawler.scrapeTRAltyazi().then(function (aciklama) {
-        var txt = "TRT2 Film Kuşağında bugün: \n" + aciklama;
+    crawler.scrapeTRAltyazi().then(function (data){
+        var txt = "Film açıklaması: \n" + data;
 
         bot.sendMessage('@snseanstest',
             txt, {
