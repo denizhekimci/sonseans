@@ -85,9 +85,8 @@ scrapeTRAltyazi = async (req, res) => {
             const text = await (await element.getProperty('textContent')).jsonValue();
             console.log(text)
             await browser.close()
-            res = text;
-            return res;
-        })
+            return text;
+        })()
     }
     catch (err) {
         res.status(500).send(err.message);
