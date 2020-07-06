@@ -49,8 +49,8 @@ function fetch() {
 
                     adi[i] = adi[i].toString();
                     searchText  = adi[i].substring(
-                        str.lastIndexOf("(") + 1,
-                        str.lastIndexOf(")")
+                        adi[i].lastIndexOf("(") + 1,
+                        adi[i].lastIndexOf(")")
                     );
 
                     yayinAkisi += saat[i] + ' - ' + adi[i] + '\n';
