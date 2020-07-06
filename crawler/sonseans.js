@@ -22,7 +22,7 @@ function fetch() {
         var yerliFilmAdi = [];
         var yabanciFilmSaati = [];
         var yabanciFilmAdi = [];
-        const searchText = '';
+        var searchText = '';
 
         const yabanciFilmSaatTag = 'p.tur96 > a > span.aks0';
         const yabanciFilmAdiTag = 'p.tur96 > a > span.aks1';
