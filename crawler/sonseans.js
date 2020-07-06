@@ -2,7 +2,6 @@ const got = require('got');
 const cheerio = require('cheerio');
 const Nightmare = require('nightmare');
 const nightmare = Nightmare({ show: true });
-const PROTOCOL = "https:";
 const HOST = "https://www.trt.net.tr";
 
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
@@ -23,6 +22,7 @@ function fetch() {
         var yerliFilmAdi = [];
         var yabanciFilmSaati = [];
         var yabanciFilmAdi = [];
+        const searchText = '';
 
         const yabanciFilmSaatTag = 'p.tur96 > a > span.aks0';
         const yabanciFilmAdiTag = 'p.tur96 > a > span.aks1';
@@ -48,6 +48,10 @@ function fetch() {
                     saat[i] = saat[i].toString();
 
                     adi[i] = adi[i].toString();
+                    searchText  = adi[i].substring(
+                        str.lastIndexOf("(") + 1,
+                        str.lastIndexOf(")")
+                    );
 
                     yayinAkisi += saat[i] + ' - ' + adi[i] + '\n';
                 } else
@@ -59,6 +63,30 @@ function fetch() {
         addToAkis(yerliFilmSaati, yerliFilmAdi);
         addToAkis(yabanciFilmSaati, yabanciFilmAdi);
 
+        const { search } = searchText;
+        console.log(searchText);
+        try {
+            (async () => {
+                const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+                const page = await browser.newPage()
+                await page.goto(URLTRAltyazi)
+                await page.waitForSelector('#autoFindNew');
+                await page.type('#autoFindNew', 'Arrival')
+                await page.click('#nForm > input[type=submit]:nth-child(14)')
+                await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3)')
+                await page.click('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3) > div:nth-child(2) > a')
+                await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div.nm-block.nm-ozet > div')
+                const element = await page.$(".ozet-goster")
+                const text = await (await element.getProperty('textContent')).jsonValue();
+                console.log(text)
+                await browser.close()
+                yayinAkisi += '\nAçıklama: ' + text; 
+            })()
+        }
+        catch (err) {
+            res.status(500).send(err.message);
+        }
+
 
         return yayinAkisi;
     }).catch(function (err) {
@@ -67,33 +95,9 @@ function fetch() {
     });
 }
 
-function scrapeTRAltyazi () {
-    const { search } = 'Arrival';
-    try {
-        (async () => {
-            const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-            const page = await browser.newPage()
-            await page.goto(URLTRAltyazi)
-            await page.waitForSelector('#autoFindNew');
-            await page.type('#autoFindNew', 'Arrival')
-            await page.click('#nForm > input[type=submit]:nth-child(14)')
-            await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3)')
-            await page.click('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3) > div:nth-child(2) > a')
-            await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div.nm-block.nm-ozet > div')
-            const element = await page.$(".ozet-goster")
-            const text = await (await element.getProperty('textContent')).jsonValue();
-            console.log(text)
-            await browser.close()
-            return text;
-        })()
-    }
-    catch (err) {
-        res.status(500).send(err.message);
-    }
-};
+
 
 
 module.exports = {
-    fetch: fetch,
-    scrapeTRAltyazi: scrapeTRAltyazi
+    fetch: fetch
 };

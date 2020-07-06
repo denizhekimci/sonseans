@@ -59,7 +59,7 @@ bot.onText(/^\/aciklama/, function (message) {
 
     firebase.saveChat(chatId, message.chat);
 
-    crawler.scrapeTRAltyazi().then(function (data){
+    crawler.fetch().then(function (data){
         var txt = "Film açıklaması: \n" + data;
 
         bot.sendMessage('@snseanstest',
