@@ -4,7 +4,7 @@ const Nightmare = require('nightmare');
 const nightmare = Nightmare({ show: true });
 const HOST = "https://www.trt.net.tr";
 
-const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
+const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=1';
 const URLTRAltyazi = 'https://turkcealtyazi.org/index.php';
 
 const puppeteer = require('puppeteer');
@@ -63,7 +63,6 @@ function fetch() {
         addToAkis(yerliFilmSaati, yerliFilmAdi);
         addToAkis(yabanciFilmSaati, yabanciFilmAdi);
 
-        const { search } = searchText;
         console.log(searchText);
         try {
             (async () => {
@@ -71,7 +70,7 @@ function fetch() {
                 const page = await browser.newPage()
                 await page.goto(URLTRAltyazi)
                 await page.waitForSelector('#autoFindNew');
-                await page.type('#autoFindNew', {search})
+                await page.type('#autoFindNew', searchText)
                 await page.click('#nForm > input[type=submit]:nth-child(14)')
                 await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3)')
                 await page.click('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3) > div:nth-child(2) > a')
