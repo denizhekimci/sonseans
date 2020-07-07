@@ -64,7 +64,7 @@ function fetch() {
         console.log(searchText);
         try {
             (async () => {
-                const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+                const browser = await puppeteer.launch({ executablePath: "./node_modules/puppeteer/.local-chromium/win64-756035/chrome-win/chrome.exe"});
                 const page = await browser.newPage()
                 await page.goto(URLTRAltyazi)
                 await page.waitForSelector('#autoFindNew');
