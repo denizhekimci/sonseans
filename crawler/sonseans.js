@@ -65,7 +65,7 @@ function fetch() {
 
         console.log(searchText);
         try {
-            (async () => {
+            (async (searchText) => {
                 const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
                 const page = await browser.newPage()
                 await page.goto(URLTRAltyazi)
@@ -77,7 +77,7 @@ function fetch() {
                 await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div.nm-block.nm-ozet > div')
                 const element = await page.$(".ozet-goster")
                 const text = await (await element.getProperty('textContent')).jsonValue();
-                
+                console.log(text)
                 yayinAkisi += '\nAçıklama: ' + text; 
                 console.log(yayinAkisi)
                 await browser.close()
