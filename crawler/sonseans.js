@@ -1,13 +1,11 @@
 const got = require('got');
 const cheerio = require('cheerio');
-const Nightmare = require('nightmare');
-const nightmare = Nightmare({ show: true });
 const HOST = "https://www.trt.net.tr";
 
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=1';
 const URLTRAltyazi = 'https://turkcealtyazi.org/index.php';
 
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 
 function fetch() {
 
