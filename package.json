@@ -1,6 +1,9 @@
 {
   "name": "sonseans",
   "version": "1.0.0",
+   "engines": {
+    "node": "8.11.3"
+  },
   "description": "",
   "private": true,
   "scripts": {
@@ -19,9 +22,6 @@
     "node-telegram-bot-api": "^0.21.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
-  },
-   "engines": {
-    "node": "8.11.3"
-  },
+  },s
   "token": "1128740447:AAF-W8aLzMUBWoagsLHjKyJ1osNL3KEBrTQ"
 }
