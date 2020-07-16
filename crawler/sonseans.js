@@ -5,8 +5,6 @@ const HOST = "https://www.trt.net.tr";
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
 const URLTRAltyazi = 'https://turkcealtyazi.org/index.php';
 
-const puppeteer = require('puppeteer');
-
 function fetch() {
 
     return got(URL).then(function (data) {
@@ -62,9 +60,9 @@ function fetch() {
         addToAkis(yabanciFilmSaati, yabanciFilmAdi);
 
         console.log(searchText);
-        run(searchText).then(txt=>{
+        /*run(searchText).then(txt=>{
             yayinAkisi += "Film Açıklaması: " + txt;
-        }).catch(console.error);
+        }).catch(console.error);*/
 
 
         return yayinAkisi;
@@ -74,7 +72,7 @@ function fetch() {
     });
 }
 
-function run (searchText) {
+/*function run (searchText) {
     return new Promise(async (resolve, reject) => {
         try {
             const browser = await puppeteer.launch();
@@ -94,7 +92,7 @@ function run (searchText) {
             return reject(e);
         }
     })
-}
+}*/
 
 
 
