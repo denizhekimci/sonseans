@@ -22,6 +22,6 @@
     "node-telegram-bot-api": "^0.21.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
-  },s
+  },
   "token": "1128740447:AAF-W8aLzMUBWoagsLHjKyJ1osNL3KEBrTQ"
 }
