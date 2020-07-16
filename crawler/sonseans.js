@@ -2,7 +2,7 @@ const got = require('got');
 const cheerio = require('cheerio');
 const HOST = "https://www.trt.net.tr";
 
-const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=1';
+const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
 const URLTRAltyazi = 'https://turkcealtyazi.org/index.php';
 
 const puppeteer = require('puppeteer-core');
@@ -64,7 +64,7 @@ function fetch() {
         console.log(searchText);
         try {
             (async () => {
-                const browser = await puppeteer.launch({ executablePath: "./node_modules/puppeteer/.local-chromium/win64-756035/chrome-win/chrome.exe"});
+                const browser = await puppeteer.launch({ args: ["--no-sandbox",	"--disable-setuid-sandbox"]});
                 const page = await browser.newPage()
                 await page.goto(URLTRAltyazi)
                 await page.waitForSelector('#autoFindNew');
