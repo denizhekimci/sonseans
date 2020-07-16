@@ -20,5 +20,8 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
   },
+   "engines": {
+    "node": "8.11.3"
+  },
   "token": "1128740447:AAF-W8aLzMUBWoagsLHjKyJ1osNL3KEBrTQ"
 }
