@@ -5,9 +5,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
 
-const firebase = require('../firebase/util');
-const crawler = require('../crawler/sonseans');
-const properties = require('../package.json');
+const firebase  = require('../firebase/util');
+const crawler  = require('../crawler/sonseans');
+const properties  = require('../package.json');
 
 const bot = new TelegramBot(properties.token);
 bot.setWebHook("https://sonseanstest.herokuapp.com/" + properties.token);
@@ -31,7 +31,7 @@ server.listen(port).on('error', function onError(error) {
     });
 
 // webhook address listener
-app.post('/' + bot.token, function (req, res) {
+app.post('/' + bot.token, function(req, res) {
     bot.processUpdate(req.body);
     res.sendStatus(200);
 });
@@ -43,29 +43,16 @@ bot.onText(/^\/trt2/, function (message) {
 
     firebase.saveChat(chatId, message.chat);
 
-    crawler.fetch().then(function (yayinAkisi) {
+    crawler.fetch().then(function (yayinAkisi)
+    {
         var txt = "TRT2 Film Kuşağında bugün: \n" + yayinAkisi;
 
         bot.sendMessage('@snseanstest',
             txt, {
-                "parse_mode": 'Markdown'
-            }).then(function () { console.log('bot replied ...'); });
+                "parse_mode" : 'Markdown'
+            }).then(function () {console.log('bot replied ...'); });
 
     });
 });
 
-bot.onText(/^\/aciklama/, function (message) {
-    const chatId = message.chat.id;
 
-    firebase.saveChat(chatId, message.chat);
-
-    crawler.fetch().then(function (data){
-        var txt = "Film açıklaması: \n" + data;
-
-        bot.sendMessage('@snseanstest',
-            txt, {
-                "parse_mode": 'Markdown'
-            }).then(function () { console.log('bot replied ...'); });
-
-    });
-});
