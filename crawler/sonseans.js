@@ -5,7 +5,7 @@ const HOST = "https://www.trt.net.tr";
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
 const URLTRAltyazi = 'https://turkcealtyazi.org/index.php';
 
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 
 function fetch() {
 
