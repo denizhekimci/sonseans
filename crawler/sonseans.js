@@ -62,29 +62,7 @@ function fetch() {
         addToAkis(yabanciFilmSaati, yabanciFilmAdi);
 
         console.log(searchText);
-        try {
-            (async () => {
-                const browser = await puppeteer.launch({ args: ["--no-sandbox",	"--disable-setuid-sandbox"]});
-                const page = await browser.newPage()
-                await page.goto(URLTRAltyazi)
-                await page.waitForSelector('#autoFindNew');
-                await page.type('#autoFindNew', searchText)
-                await page.click('#nForm > input[type=submit]:nth-child(14)')
-                await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3)')
-                await page.click('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3) > div:nth-child(2) > a')
-                await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div.nm-block.nm-ozet > div')
-                const element = await page.$(".ozet-goster")
-                const text = await (await element.getProperty('textContent')).jsonValue();
-                console.log(text)
-                yayinAkisi += '\nAçıklama: ' + text; 
-                console.log(yayinAkisi)
-                await browser.close()
-
-            })()
-        }
-        catch (err) {
-            res.status(500).send(err.message);
-        }
+        
 
 
         return yayinAkisi;
