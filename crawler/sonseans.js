@@ -88,7 +88,7 @@ function run (searchText) {
             const element = await page.$(".ozet-goster")
             const text = await (await element.getProperty('textContent')).jsonValue();
             browser.close();
-            return resolve(text);
+            resolve(text);
         } catch (e) {
             return reject(e);
         }
