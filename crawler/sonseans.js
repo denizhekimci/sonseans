@@ -6,7 +6,7 @@ const HOST = "https://www.trt.net.tr";
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
 const puppeteer = require('puppeteer');
 
-async function fetch(){
+function fetch(){
 
     return got(URL).then(function(data){
 
@@ -73,7 +73,7 @@ async function fetch(){
     });
 }
 
-function run (searchText) {
+async function run (searchText) {
     return new Promise(async (resolve, reject) => {
         try {
             const browser = await puppeteer.launch();
