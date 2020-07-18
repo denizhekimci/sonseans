@@ -20,6 +20,7 @@ function fetch(){
         var yerliFilmAdi = [];
         var yabanciFilmSaati = [];
         var yabanciFilmAdi = [];
+        var searchText = '';
 
         const yabanciFilmSaatTag = 'p.tur96 > a > span.aks0';
         const yabanciFilmAdiTag = 'p.tur96 > a > span.aks1';
@@ -47,6 +48,11 @@ function fetch(){
                     adi[i] = adi[i].toString();
 
                     yayinAkisi += saat[i] + ' - ' + adi[i] + '\n';
+                    searchText = adi.substring(
+                        str.lastIndexOf("(") + 1, 
+                        str.lastIndexOf(")")
+                    );
+                    
                 }else
                     continue;
             }
@@ -56,7 +62,10 @@ function fetch(){
         addToAkis(yerliFilmSaati, yerliFilmAdi);
         addToAkis(yabanciFilmSaati, yabanciFilmAdi);
 
-
+       
+        run(txt).then(data =>{
+            yayinAkisi += "\nFilm Açıklaması: " + data;
+        })
         return yayinAkisi;
     }).catch(function(err){
         //handle error

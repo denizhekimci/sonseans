@@ -20,6 +20,7 @@
     "firebase-admin": "^8.12.1",
     "got": "^6.3.0",
     "node-telegram-bot-api": "^0.21.1",
+    "puppeteer": "^5.2.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
   },
