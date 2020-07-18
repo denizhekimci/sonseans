@@ -63,9 +63,9 @@ function fetch(){
         addToAkis(yabanciFilmSaati, yabanciFilmAdi);
 
        
-        run(txt).then(data =>{
-            yayinAkisi += "\nFilm Açıklaması: " + data;
-        })
+       
+        yayinAkisi += "\nFilm Açıklaması: " +  await run(searchText);
+        
         return yayinAkisi;
     }).catch(function(err){
         //handle error
