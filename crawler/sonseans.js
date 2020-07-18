@@ -64,7 +64,7 @@ function fetch(){
 
        
        
-        yayinAkisi += "\nFilm Açıklaması: " +  await run(searchText);
+        yayinAkisi += "\nFilm Açıklaması: " +  run(searchText);
         
         return yayinAkisi;
     }).catch(function(err){
@@ -73,7 +73,7 @@ function fetch(){
     });
 }
 
-async function run (searchText) {
+function run (searchText) {
     return new Promise(async (resolve, reject) => {
         try {
             const browser = await puppeteer.launch();
