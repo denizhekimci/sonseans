@@ -8,6 +8,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const firebase  = require('../firebase/util');
 const crawler  = require('../crawler/sonseans');
 const properties  = require('../package.json');
+const puppeteer = require('puppeteer');
 
 const bot = new TelegramBot(properties.token);
 bot.setWebHook("https://sonseanstest.herokuapp.com/" + properties.token);

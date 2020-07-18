@@ -4,6 +4,7 @@ const PROTOCOL = "https:";
 const HOST = "https://www.trt.net.tr";
 
 const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
+const puppeteer = require('puppeteer');
 
 function fetch(){
 
@@ -12,6 +13,7 @@ function fetch(){
         var $ = cheerio.load(data.body,{decodeEntities:false});
 
         var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
+        
 
         var yayinAkisi = [];
         var yerliFilmSaati = [];
@@ -39,7 +41,7 @@ function fetch(){
 
         function addToAkis(saat, adi) {
             for (var i = 0; i < adi.length; i++) {
-                if (saat[i] < '22.00' && saat[i] > '20.00'){
+                if ((saat[i] < '23.59' && saat[i] > '20.00') && adi[i].includes('Sinema')){
                     saat[i] = saat[i].toString();
 
                     adi[i] = adi[i].toString();
@@ -60,6 +62,28 @@ function fetch(){
         //handle error
         return err;
     });
+}
+
+function run (searchText) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const browser = await puppeteer.launch();
+            const page = await browser.newPage();
+            await page.goto(URLTRAltyazi);
+            await page.waitForSelector('#autoFindNew');
+            await page.type('#autoFindNew', searchText)
+            await page.click('#nForm > input[type=submit]:nth-child(14)')
+            await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3)')
+            await page.click('#ncontent > div > div.sub-container.nleft > div > div:nth-child(3) > div:nth-child(2) > a')
+            await page.waitForSelector('#ncontent > div > div.sub-container.nleft > div.nm-block.nm-ozet > div')
+            const element = await page.$(".ozet-goster")
+            const text = await (await element.getProperty('textContent')).jsonValue();
+            browser.close();
+            return resolve(text);
+        } catch (e) {
+            return reject(e);
+        }
+    })
 }
 
 module.exports = {
