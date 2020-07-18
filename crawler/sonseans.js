@@ -85,9 +85,9 @@ function fetch(){
 
        
        
-        run(searchText).then(result =>{
+       /* run(searchText).then(result =>{
             yayinAkisi += '\nFilm Açıklaması: ' + result;
-        })
+        })*/
         
         return yayinAkisi;
     }).catch(function(err){
