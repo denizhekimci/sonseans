@@ -42,7 +42,6 @@ bot.onText(/^\/trt2/, function (message) {
     const chatId = message.chat.id;
 
     firebase.saveChat(chatId, message.chat);
-
     crawler.fetch().then(function (yayinAkisi)
     {
         var txt = "TRT2 Film Kuşağında bugün: \n" + yayinAkisi;
