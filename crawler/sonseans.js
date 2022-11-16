@@ -13,7 +13,7 @@ function fetch(){
 
         var $ = cheerio.load(data.body,{decodeEntities:false});
 
-        var $chunk = cheerio.load($('#gunlukAkisDIV').html(), {decodeEntities:false})
+        var $chunk = cheerio.load($('#__layout').html(), {decodeEntities:false})
         
 
         var yayinAkisi = [];
