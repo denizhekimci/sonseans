@@ -3,7 +3,7 @@ const cheerio   = require('cheerio');
 const PROTOCOL = "https:";
 const HOST = "https://www.trt.net.tr";
 
-const URL = 'http://www.trt.net.tr/televizyon/akis.aspx?kanal=trt-2&gun=0';
+const URL = 'https://www.trtizle.com/yayin-akisi';
 const puppeteer = require('puppeteer');
 
 
