@@ -12,10 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "~1.16.0",
+    "body-parser": "~1.20.1",
     "cheerio": "^0.22.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "firebase": "^3.8.0",
     "firebase-admin": "^8.12.1",
     "got": "^6.3.0",
